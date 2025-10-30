@@ -38,7 +38,7 @@ const menuItems: MenuItem[] = [
     description: 'Классический салат с курицей, листьями салата и пармезаном',
     price: 320,
     calories: 380,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/d45c684b-0b98-49e3-83a3-9c6b62748863.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/9df29700-1e66-4bb6-aed1-61fdb273f981.jpg',
     category: 'Салаты',
     availability: { machine1: true, machine2: true, machine3: false }
   },
@@ -48,7 +48,7 @@ const menuItems: MenuItem[] = [
     description: 'Паста с беконом в сливочном соусе с пармезаном',
     price: 380,
     calories: 520,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/3bf4df44-bc05-45ed-9704-5662b0cd29ed.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/3d7db01a-bc0f-429a-bcd6-d022536ef25c.jpg',
     category: 'Основные блюда',
     availability: { machine1: true, machine2: true, machine3: true }
   },
@@ -58,7 +58,7 @@ const menuItems: MenuItem[] = [
     description: 'Тонкие домашние блинчики',
     price: 180,
     calories: 290,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/85037fd1-435c-4742-8a98-77524d2c1bc1.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/e08e1244-6a05-4a70-9ded-56e2ae754e8e.jpg',
     category: 'Завтраки',
     availability: { machine1: true, machine2: false, machine3: true }
   },
@@ -68,7 +68,7 @@ const menuItems: MenuItem[] = [
     description: 'Блинчики с мясной начинкой',
     price: 250,
     calories: 420,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/85037fd1-435c-4742-8a98-77524d2c1bc1.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/f8181805-811d-413b-9cc4-52284f8424d8.jpg',
     category: 'Завтраки',
     availability: { machine1: false, machine2: true, machine3: true }
   },
@@ -78,7 +78,7 @@ const menuItems: MenuItem[] = [
     description: 'Творожные сырники со сметаной',
     price: 220,
     calories: 340,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/2e8f7211-72d2-49db-82f5-71eeb43bdd93.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/eed0b946-a168-4ad4-98b4-0502106047c3.jpg',
     category: 'Завтраки',
     availability: { machine1: true, machine2: true, machine3: false }
   },
@@ -88,7 +88,7 @@ const menuItems: MenuItem[] = [
     description: 'Классический овощной салат',
     price: 180,
     calories: 150,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/2e8f7211-72d2-49db-82f5-71eeb43bdd93.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/609d6129-629c-483b-a88f-2407355f9213.jpg',
     category: 'Салаты',
     availability: { machine1: true, machine2: true, machine3: true }
   },
@@ -98,7 +98,7 @@ const menuItems: MenuItem[] = [
     description: 'Ароматный плов с куриным мясом',
     price: 350,
     calories: 480,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/0e3f5a4e-c904-4e92-bef5-27e92e12f8a8.jpg',
     category: 'Основные блюда',
     availability: { machine1: true, machine2: false, machine3: true }
   },
@@ -108,7 +108,7 @@ const menuItems: MenuItem[] = [
     description: 'Сочные котлеты из курицы с гарниром из булгура',
     price: 320,
     calories: 410,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/2969e352-98bc-4a5f-8c98-478f15dfcc0d.jpg',
     category: 'Основные блюда',
     availability: { machine1: true, machine2: true, machine3: false }
   },
@@ -118,7 +118,7 @@ const menuItems: MenuItem[] = [
     description: 'Полезная гречневая лапша с овощами',
     price: 340,
     calories: 380,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/ee3f6d9f-0aae-4659-9471-8a34f43989f9.jpg',
     category: 'Основные блюда',
     availability: { machine1: false, machine2: true, machine3: true }
   },
@@ -128,7 +128,7 @@ const menuItems: MenuItem[] = [
     description: 'Свежий салат из капусты и моркови',
     price: 150,
     calories: 120,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/2e8f7211-72d2-49db-82f5-71eeb43bdd93.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/0ff8b3b6-fc28-4514-a08f-3f64e7fc1a9b.jpg',
     category: 'Салаты',
     availability: { machine1: true, machine2: true, machine3: true }
   },
@@ -138,7 +138,7 @@ const menuItems: MenuItem[] = [
     description: 'Паста с мясным соусом болоньезе',
     price: 360,
     calories: 500,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/3bf4df44-bc05-45ed-9704-5662b0cd29ed.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/991b2430-22ce-4d04-9abc-72dbe59fed46.jpg',
     category: 'Основные блюда',
     availability: { machine1: true, machine2: true, machine3: false }
   },
@@ -148,7 +148,7 @@ const menuItems: MenuItem[] = [
     description: 'Полезная пшенная каша с тыквой',
     price: 200,
     calories: 280,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/2e8f7211-72d2-49db-82f5-71eeb43bdd93.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/48d18100-cb1c-45f5-987d-b0129c574423.jpg',
     category: 'Завтраки',
     availability: { machine1: true, machine2: false, machine3: true }
   },
@@ -158,7 +158,7 @@ const menuItems: MenuItem[] = [
     description: 'Лапша вок с курицей и овощами',
     price: 380,
     calories: 460,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/68ddde02-3d0b-4a97-928e-8ed19db1cf78.jpg',
     category: 'Основные блюда',
     availability: { machine1: false, machine2: true, machine3: true }
   },
@@ -168,7 +168,7 @@ const menuItems: MenuItem[] = [
     description: 'Куриные биточки с тушеной капустой',
     price: 310,
     calories: 390,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/13d06a52-29d2-482d-b3ba-86ca17543f9c.jpg',
     category: 'Основные блюда',
     availability: { machine1: true, machine2: true, machine3: false }
   },
@@ -178,7 +178,7 @@ const menuItems: MenuItem[] = [
     description: 'Гречневая каша с тефтелями',
     price: 340,
     calories: 450,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/6b8f0bff-a8a9-4b07-ba27-000b40ec3e8c.jpg',
     category: 'Основные блюда',
     availability: { machine1: true, machine2: false, machine3: true }
   },

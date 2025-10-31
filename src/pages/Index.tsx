@@ -378,9 +378,11 @@ function Index() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-3xl">🥧</span>
-              </div>
+              <img 
+                src="https://cdn.poehali.dev/files/f3e4138e-230b-4b96-aa01-f3730e644d9d.jpg" 
+                alt="Пироговский дворик" 
+                className="h-12 w-auto object-contain"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-foreground">Пироговский дворик</h1>
                 <p className="text-xs text-muted-foreground">быстро, качественно, экологично</p>

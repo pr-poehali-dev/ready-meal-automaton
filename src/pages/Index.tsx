@@ -269,6 +269,11 @@ const faqItems = [
   }
 ];
 
+interface CartItem {
+  item: MenuItem;
+  machine: number;
+}
+
 function Index() {
   const [activeSection, setActiveSection] = useState('home');
   const [sortBy, setSortBy] = useState<'price-asc' | 'price-desc' | 'calories-asc' | 'calories-desc'>('price-asc');
@@ -277,6 +282,11 @@ function Index() {
   const [preorderDialogOpen, setPreorderDialogOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [selectedMachineForPreorder, setSelectedMachineForPreorder] = useState<number | null>(null);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cartDialogOpen, setCartDialogOpen] = useState(false);
+  const [feedbackDialogOpen, setFeedbackDialogOpen] = useState(false);
+  const [feedbackName, setFeedbackName] = useState('');
+  const [feedbackMessage, setFeedbackMessage] = useState('');
 
   const filteredAndSortedItems = useMemo(() => {
     let items = [...menuItems];
@@ -313,16 +323,45 @@ function Index() {
     setPreorderDialogOpen(true);
   };
 
-  const completePreorder = () => {
+  const addToCart = () => {
     if (!selectedMachineForPreorder || !selectedItem) {
       alert('Выберите автомат для дозаказа');
       return;
     }
-    const machine = vendingMachines.find(m => m.id === selectedMachineForPreorder);
-    alert(`Дозаказ оформлен!\n\nБлюдо: ${selectedItem.name}\nАвтомат: ${machine?.address}\nПолучение: завтра после 12:00`);
+    setCart([...cart, { item: selectedItem, machine: selectedMachineForPreorder }]);
     setPreorderDialogOpen(false);
     setSelectedItem(null);
     setSelectedMachineForPreorder(null);
+    alert('Блюдо добавлено в корзину дозаказа!');
+  };
+
+  const removeFromCart = (index: number) => {
+    setCart(cart.filter((_, i) => i !== index));
+  };
+
+  const completeOrder = () => {
+    if (cart.length === 0) {
+      alert('Корзина пуста');
+      return;
+    }
+    const orderDetails = cart.map(({ item, machine }) => {
+      const machineData = vendingMachines.find(m => m.id === machine);
+      return `${item.name} - ${machineData?.address}`;
+    }).join('\n');
+    alert(`Дозаказ оформлен!\n\n${orderDetails}\n\nПолучение: завтра после 12:00`);
+    setCart([]);
+    setCartDialogOpen(false);
+  };
+
+  const submitFeedback = () => {
+    if (!feedbackMessage.trim()) {
+      alert('Напишите сообщение');
+      return;
+    }
+    alert(`Спасибо за обратную связь!${feedbackName ? `\n\nИмя: ${feedbackName}` : ''}\n\nВаше сообщение:\n${feedbackMessage}`);
+    setFeedbackName('');
+    setFeedbackMessage('');
+    setFeedbackDialogOpen(false);
   };
 
   const getMachineAvailability = (item: MenuItem) => {
@@ -347,7 +386,7 @@ function Index() {
                 <p className="text-xs text-muted-foreground">быстро, качественно, экологично</p>
               </div>
             </div>
-            <nav className="hidden md:flex gap-6">
+            <nav className="hidden md:flex gap-6 items-center">
               {['home', 'menu', 'machines', 'faq'].map((section) => (
                 <button
                   key={section}
@@ -362,6 +401,19 @@ function Index() {
                   {section === 'faq' && 'FAQ'}
                 </button>
               ))}
+              <Button variant="outline" size="sm" onClick={() => setFeedbackDialogOpen(true)}>
+                <Icon name="MessageCircle" size={16} className="mr-1" />
+                Обратная связь
+              </Button>
+              <Button variant="default" size="sm" onClick={() => setCartDialogOpen(true)} className="relative">
+                <Icon name="ShoppingCart" size={16} className="mr-1" />
+                Корзина
+                {cart.length > 0 && (
+                  <Badge className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center">
+                    {cart.length}
+                  </Badge>
+                )}
+              </Button>
             </nav>
           </div>
         </div>
@@ -612,11 +664,122 @@ function Index() {
                 </p>
               </div>
 
-              <Button onClick={completePreorder} className="w-full">
-                Оформить дозаказ
+              <Button onClick={addToCart} className="w-full">
+                Добавить в корзину
               </Button>
             </div>
           )}
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={cartDialogOpen} onOpenChange={setCartDialogOpen}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>Корзина дозаказа</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            {cart.length === 0 ? (
+              <div className="text-center py-8 text-muted-foreground">
+                <Icon name="ShoppingCart" size={48} className="mx-auto mb-4 opacity-50" />
+                <p>Корзина пуста</p>
+              </div>
+            ) : (
+              <>
+                <div className="space-y-3 max-h-96 overflow-y-auto">
+                  {cart.map((cartItem, index) => {
+                    const machine = vendingMachines.find(m => m.id === cartItem.machine);
+                    return (
+                      <Card key={index} className="p-4">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex items-start gap-3 flex-1">
+                            <img 
+                              src={cartItem.item.image} 
+                              alt={cartItem.item.name} 
+                              className="w-16 h-16 object-cover rounded"
+                            />
+                            <div className="flex-1">
+                              <h4 className="font-semibold">{cartItem.item.name}</h4>
+                              <p className="text-sm text-muted-foreground">
+                                <Icon name="MapPin" size={14} className="inline mr-1" />
+                                {machine?.address} ({machine?.floor})
+                              </p>
+                              <p className="font-bold text-primary mt-1">{cartItem.item.price} ₽</p>
+                            </div>
+                          </div>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            onClick={() => removeFromCart(index)}
+                            className="text-destructive hover:text-destructive"
+                          >
+                            <Icon name="Trash2" size={18} />
+                          </Button>
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+                <div className="border-t pt-4 space-y-2">
+                  <div className="flex justify-between text-lg font-semibold">
+                    <span>Итого:</span>
+                    <span className="text-primary">{cart.reduce((sum, item) => sum + item.item.price, 0)} ₽</span>
+                  </div>
+                  <div className="bg-accent/50 p-3 rounded-lg">
+                    <p className="text-sm text-muted-foreground">
+                      <Icon name="Info" size={16} className="inline mr-1" />
+                      Блюда будут доступны завтра после 12:00
+                    </p>
+                  </div>
+                  <Button onClick={completeOrder} className="w-full" size="lg">
+                    <Icon name="Check" size={18} className="mr-2" />
+                    Оформить дозаказ ({cart.length} блюд)
+                  </Button>
+                </div>
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={feedbackDialogOpen} onOpenChange={setFeedbackDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Обратная связь</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div>
+              <Label htmlFor="feedback-name" className="mb-2 block">Ваше имя (необязательно)</Label>
+              <input
+                id="feedback-name"
+                type="text"
+                value={feedbackName}
+                onChange={(e) => setFeedbackName(e.target.value)}
+                placeholder="Анонимно"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
+            <div>
+              <Label htmlFor="feedback-message" className="mb-2 block">Ваше сообщение *</Label>
+              <textarea
+                id="feedback-message"
+                value={feedbackMessage}
+                onChange={(e) => setFeedbackMessage(e.target.value)}
+                placeholder="Напишите ваш отзыв, пожелание или вопрос..."
+                rows={5}
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+              />
+            </div>
+            <div className="bg-accent/50 p-3 rounded-lg">
+              <p className="text-sm text-muted-foreground">
+                <Icon name="Lock" size={16} className="inline mr-1" />
+                Ваше сообщение анонимно и конфиденциально
+              </p>
+            </div>
+            <Button onClick={submitFeedback} className="w-full">
+              <Icon name="Send" size={18} className="mr-2" />
+              Отправить
+            </Button>
+          </div>
         </DialogContent>
       </Dialog>
 

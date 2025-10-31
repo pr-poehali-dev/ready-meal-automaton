@@ -188,7 +188,7 @@ const menuItems: MenuItem[] = [
     description: 'Низкокалорийный бургер с говяжьей котлетой',
     price: 280,
     calories: 350,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/4c8e6eca-42df-46c3-80a9-c9c98c2bb9cc.jpg',
     category: 'Основные блюда',
     availability: { machine1: true, machine2: true, machine3: true }
   },
@@ -198,7 +198,7 @@ const menuItems: MenuItem[] = [
     description: 'Традиционный борщ со сметаной',
     price: 250,
     calories: 220,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/5023e006-4507-44e5-8b90-0d1f8cf63120.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/8b7aebdd-91ce-4d4a-82f6-06bfa7aca51d.jpg',
     category: 'Супы',
     availability: { machine1: false, machine2: true, machine3: true }
   },
@@ -208,7 +208,7 @@ const menuItems: MenuItem[] = [
     description: 'Ролл с крабовым мясом и авокадо',
     price: 320,
     calories: 280,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/8a3f5c87-27c5-4b5a-b5fa-c26e04d6ef47.jpg',
     category: 'Суши',
     availability: { machine1: true, machine2: true, machine3: false }
   },
@@ -218,7 +218,7 @@ const menuItems: MenuItem[] = [
     description: 'Ролл с лососем и сливочным сыром',
     price: 380,
     calories: 310,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/b3dd30c8-6a5f-4d6f-b7e2-0d89de2cbd13.jpg',
     category: 'Суши',
     availability: { machine1: true, machine2: false, machine3: true }
   },
@@ -228,7 +228,7 @@ const menuItems: MenuItem[] = [
     description: 'Ролл с копченым угрем и огурцом',
     price: 350,
     calories: 290,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/27b231dc-85e9-434c-a451-9fed62f6e8ab.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/3c859e65-4a6f-4af9-8e15-25dec2862e94.jpg',
     category: 'Суши',
     availability: { machine1: false, machine2: true, machine3: true }
   },
@@ -238,7 +238,7 @@ const menuItems: MenuItem[] = [
     description: 'Домашний куриный суп с яичной лапшой',
     price: 220,
     calories: 180,
-    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/5023e006-4507-44e5-8b90-0d1f8cf63120.jpg',
+    image: 'https://cdn.poehali.dev/projects/c4a38814-a77b-4f47-9787-52149997cd6f/files/c5f0a8d5-8e72-4f12-b9c1-7cf5e8c6d8e2.jpg',
     category: 'Супы',
     availability: { machine1: true, machine2: true, machine3: true }
   }
